@@ -82,11 +82,16 @@ func _process(delta):
 			draw_line(normal_node, Vector3.ZERO, normal_y3*2, Color.green)
 			normal_node.end()
 			
-			printt(dir, normal, innerGimbal.rotation_degrees.x, rad2deg(angle_y), abs(innerGimbal.rotation.x)+abs(angle_y))
+			printt(dir, normal, innerGimbal.rotation_degrees, rad2deg(angle_y), abs(innerGimbal.rotation.x)+abs(angle_y))
 			
 #			rotate_y(-angle_x)
+
+			if innerGimbal.rotation.x >= -PI/2 and innerGimbal.rotation.x <= PI/2:
+				angle_y = -angle_y
 #
-			innerGimbal.rotate_x(-angle_y)
+			print(rad2deg(angle_y))
+				
+			innerGimbal.rotate_x(angle_y)
 		
 		pass
 #	pass

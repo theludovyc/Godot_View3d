@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Articulation.obj-924413e7ba0283294f3537f6d5e1a16f.mesh"
+
+[deps]
+
+files=[ "res://.import/Articulation.obj-924413e7ba0283294f3537f6d5e1a16f.mesh" ]
+
+source_file="res://Art/Articulation.obj"
+dest_files=[ "res://.import/Articulation.obj-924413e7ba0283294f3537f6d5e1a16f.mesh", "res://.import/Articulation.obj-924413e7ba0283294f3537f6d5e1a16f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
