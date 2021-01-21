@@ -55,22 +55,19 @@ func _process(delta):
 			var dir = $InnerGimbal/Camera.global_transform.basis.z
 			
 			var normal_x = Vector2(normal.x, normal.z)
+			var normal_x3 = Vector3(normal_x.x, 0, normal_x.y)
 			
 			var normal_y = Vector2(normal_x.length(), normal.y)
-			var normal_y3 = Vector3(normal_y.x, normal_y.y, 0)
 			
 			var dir_x = Vector2(dir.x, dir.z)
 			var dir_x3 = Vector3(dir.x, 0, dir.z)
 			
 			var dir_y = Vector2(dir_x.length(), dir.y)
-			var dir_y3 = Vector3(dir_y.x, dir_y.y, 0)
 			
 			var angle_y = dir_y.angle_to(normal_y)
 			
 #			if abs(innerGimbal.rotation.x)+abs(angle_y) > PI:
 #				angle_y = -angle_y
-			
-			var angle_x = dir_x.angle_to(normal_x)
 			
 			var normal_node = $"../normal"
 			normal_node.clear()
@@ -78,18 +75,18 @@ func _process(delta):
 			draw_line(normal_node, Vector3.ZERO, normal*2, Color.red)
 			draw_line(normal_node, Vector3.ZERO, dir*2, Color.blue)
 			draw_line(normal_node, Vector3.ZERO, dir_x3*2, Color.cyan)
-			draw_line(normal_node, Vector3.ZERO, dir_y3*2, Color.yellow)
-			draw_line(normal_node, Vector3.ZERO, normal_y3*2, Color.green)
+			draw_line(normal_node, Vector3.ZERO, normal_x3*2, Color.green)
 			normal_node.end()
 			
-			printt(dir, normal, innerGimbal.rotation_degrees, rad2deg(angle_y), abs(innerGimbal.rotation.x)+abs(angle_y))
+			var angle_x = dir_x.angle_to(normal_x)
 			
-#			rotate_y(-angle_x)
+			printt(dir, normal, rotation_degrees, rad2deg(angle_x))
+			
+			if normal_x.length() > 0.01:
+				rotate_y(-angle_x)
 
 			if innerGimbal.rotation.x >= -PI/2 and innerGimbal.rotation.x <= PI/2:
 				angle_y = -angle_y
-#
-			print(rad2deg(angle_y))
 				
 			innerGimbal.rotate_x(angle_y)
 		

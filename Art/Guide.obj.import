@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Guide.obj-c3c8870855bab3a80afae370d8462c69.mesh"
+
+[deps]
+
+files=[ "res://.import/Guide.obj-c3c8870855bab3a80afae370d8462c69.mesh" ]
+
+source_file="res://Art/Guide.obj"
+dest_files=[ "res://.import/Guide.obj-c3c8870855bab3a80afae370d8462c69.mesh", "res://.import/Guide.obj-c3c8870855bab3a80afae370d8462c69.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
